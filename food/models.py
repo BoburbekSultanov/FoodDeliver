@@ -31,7 +31,7 @@ class Food(models.Model):
     description = models.TextField()
     bonus_price = models.PositiveIntegerField(default=0)
     rate = models.PositiveSmallIntegerField(default=0)
-    bonus_section = models.CharField(max_length=5, null=True, blank=True)
+    bonus_section = models.CharField(max_length=5, null=True, blank=True) # 6 / 1
 
     category = models.ForeignKey(Category, on_delete=CASCADE, related_name="category", default=1)
 

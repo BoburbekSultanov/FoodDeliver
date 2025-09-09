@@ -10,6 +10,7 @@ urlpatterns = [
                 path("account/", include("account.urls")),
                 path("food/", include("food.urls")),
                 path("deliver/", include("deliver.urls")),
+                path("restaurant/", include("restaurant.urls")),
             ]
         )
     ),

@@ -1,5 +1,5 @@
 from drf_spectacular.utils import extend_schema
-from rest_framework import generics
+from rest_framework import generics, views, viewsets
 from rest_framework.permissions import AllowAny
 
 from food.models import Category, Food

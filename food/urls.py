@@ -1,19 +1,11 @@
-from django.urls import path
+from rest_framework import routers
 
-from food.views import (CategoryCreateApiView,
-                        CategoryUpdateApiView,
-                        CategoryDestroyAPIView,
-                        FoodListCreateApiView,
-                        FoodDApiView, CategoryDetailApiView)
+from food.views import (FoodViewSet,
+                        CategoryViewSet)
+
+router = routers.DefaultRouter()
+router.register(r"food", FoodViewSet, basename="food")
+router.register(r"category", CategoryViewSet, basename="category")
 
 urlpatterns = [
-    path("category/", CategoryCreateApiView.as_view(), name="category_create_list"),
-    path("category/update/<int:pk>", CategoryUpdateApiView.as_view(), name="category_update"),
-    path("category/delete/<int:pk>", CategoryDestroyAPIView.as_view(), name="category_delete"),
-    path("category/detail/<int:pk>", CategoryDetailApiView.as_view(), name="category_detail"),
-]
-
-urlpatterns += [
-    path("create/list/", FoodListCreateApiView.as_view(), name="food_create_list"),
-    path("<int:pk>", FoodDApiView.as_view(), name="food"),
-]
+              ] + router.urls

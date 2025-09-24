@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "account",
     "food",
     "deliver",
-    "restaurant"
+    "restaurant",
 
     # third app
     "rest_framework",
